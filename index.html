@@ -1,0 +1,8 @@
+---
+layout: layout.html
+title: Main Site
+---
+{% for blog in collections.blog %}
+<h2><a href="{{ blog.url }}">{{ blog.data.title }}</a></h2>
+<p>{{ blog.data.description }}</p>
+{% endfor %}
