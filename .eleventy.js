@@ -1,25 +1,14 @@
-const sass = require("sass");
+const pluginRev = require("eleventy-plugin-rev");
+const eleventySass = require("eleventy-sass");
 
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addTemplateFormats("scss");
+  // eleventyConfig.addPlugin(pluginRev);
+  eleventyConfig.addPlugin(eleventySass, {
+    // rev: true
+  });
 
-	// Creates the extension for use
-	eleventyConfig.addExtension("scss", {
-		outputFileExtension: "css", // optional, default: "html"
-
-		// `compile` is called once per .scss file in the input directory
-		compile: async function (inputContent) {
-			let result = sass.compileString(inputContent);
-
-			// This is the render function, `data` is the full data cascade
-			return async (data) => {
-				return result.css;
-			};
-		},
-	});
-
-    eleventyConfig.setNunjucksEnvironmentOptions({
-		throwOnUndefined: true,
-		autoescape: false, // warning: don’t do this!
-	});
+  eleventyConfig.setNunjucksEnvironmentOptions({
+    throwOnUndefined: true,
+    autoescape: false, // warning: don’t do this!
+  });
 };
