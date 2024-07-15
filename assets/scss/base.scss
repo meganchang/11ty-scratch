@@ -11,3 +11,32 @@ body {
 header {
     width: 30%;
 }
+
+main {
+    padding: 24px;
+}
+
+.blogs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog {
+    text-align: center;
+    width: 100%;
+    &:nth-child(n+2),
+    &:nth-child(n+3) {
+        width: calc((100% - 16px)/2);
+    }
+    &:nth-child(n+3) {
+        padding-left: 16px;
+    }
+
+}
+
+.blog-header {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

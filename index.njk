@@ -2,10 +2,14 @@
 layout: home.njk
 title: Main Site
 ---
-{% for blog in collections.blog %}
-<div>
-  {% image blog.data.imagepath, "test" %}
+<div class="blogs">
+  {% for blog in collections.blog %}
+  <a class="blog" href="{{ blog.url }}">
+    <div class="blog-header">
+      {% image blog.data.imagepath, "test" %}
+    </div>
+    <h2>{{ blog.data.title }}</h2>
+    <p>{{ blog.data.description }}</p>
+  </a>
+  {% endfor %}
 </div>
-<h2><a href="{{ blog.url }}">{{ blog.data.title }}</a></h2>
-<p>{{ blog.data.description }}</p>
-{% endfor %}
