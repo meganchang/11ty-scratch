@@ -3,6 +3,9 @@ layout: home.njk
 title: Main Site
 ---
 {% for blog in collections.blog %}
+<div>
+  {% image blog.data.imagepath, "test" %}
+</div>
 <h2><a href="{{ blog.url }}">{{ blog.data.title }}</a></h2>
 <p>{{ blog.data.description }}</p>
 {% endfor %}

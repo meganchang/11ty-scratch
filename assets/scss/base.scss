@@ -1,6 +1,13 @@
 @import 'nav';
 
-body { 
-    // color: red;
-    // background-color: darkblue;
+$background-color: #FFFFFF;
+
+body {
+    display: flex;
+    width: 100%;
+    background-color: $background-color;
+}
+
+header {
+    width: 30%;
 }
