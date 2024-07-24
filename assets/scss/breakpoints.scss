@@ -1,0 +1,26 @@
+$bp-xm: 320px;
+$bp-sm: 640px;
+$bp-md: 960px;
+$bp-lg: 1200px;
+$bp-xl: 1600px;
+
+@mixin breakpoint($bp) {
+    @if $bp == $bp-xm { //screen is at least 320
+        @media (min-width: 320px) { @content; } 
+    }
+    @else if $bp == $bp-sm { //screen is at least 640
+        @media (min-width: 640px) { @content; } 
+    }
+    @else if $bp == $bp-md { //screen is at least 960
+        @media (min-width: 960px) { @content; } 
+    }
+    @else if $bp == $bp-lg { //screen is at least 1200
+        @media (min-width: 1200px) { @content; } 
+    }
+    @else if $bp == $bp-xl { //screen is at least 1600
+        @media (min-width: 1600px) { @content; } 
+    }
+    @else if $bp == 'wide' { //screen is at least 1600
+        @media (min-width: 1601px) { @content; } 
+    }
+}
