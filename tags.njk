@@ -17,15 +17,5 @@ eleventyComputed:
   <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}
 </ol> #}
-
-<div class="blogs">
-  {% for blog in collections[ tag ] %}
-  <a class="blog" href="{{ blog.url }}">
-    <div class="blog-header">
-      {% image blog.data.imagepath, "test" %}
-    </div>
-    <h2 class="blog-title">{{ blog.data.title }}</h2>
-    <p class="blog-description">{{ blog.data.description }}</p>
-  </a>
-  {% endfor %}
-</div>
+{% set bloglist = collections[ tag ] %}
+{% include "blog-list.njk" %}
