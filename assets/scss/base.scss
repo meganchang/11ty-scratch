@@ -4,19 +4,35 @@
 @import 'nav';
 
 $background-color: #FFFFFF;
+$nav-desktop-width: 120px;
 
-body {
+.body-wrapper {
     display: flex;
-    width: 100%;
+    padding: 60px;
+    // width: 100%;
     background-color: $background-color;
+    @include breakpoint($bp-md) {
+        // width: calc(100% - $nav-desktop-width);
+        // width: 100%;
+    }
 }
-
+// nav
 header {
-    width: 30%;
+    width: 100%;
+    float: left;
+    @include breakpoint($bp-md) {
+        min-width: $nav-desktop-width;
+        padding-right: 60px;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
 }
 
 main {
-    padding: 24px;
+    // padding: 24px;
 }
 
 a {

@@ -17,13 +17,15 @@
 
   </head>
   <body>
-    {# BEGIN Header #}
-    {% include 'header.njk' %}
-    {# END Header #}
-  
-    {# BEGIN Main #}
-    <main>{% block main %}{% endblock %}</main>
-    {# END Main #}
+    <div class="body-wrapper">
+      {# BEGIN Header #}
+      {% include 'header.njk' %}
+      {# END Header #}
+    
+      {# BEGIN Main #}
+      <main>{% block main %}{% endblock %}</main>
+      {# END Main #}
+    </div>
   
     {# BEGIN Footer #}
     {# {% include 'footer.njk' %} #}
