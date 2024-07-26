@@ -19,7 +19,6 @@ $nav-desktop-width: 120px;
 // nav
 header {
     width: 100%;
-    float: left;
     @include breakpoint($bp-md) {
         min-width: $nav-desktop-width;
         padding-right: 60px;

@@ -2,19 +2,15 @@
     <nav>
         <ul class="list-main menu-item-bold">
             <li><a href="/">Home</a></li>
-            <li><a href="/blog">Blogs</a></li>
+            <li><a href="/about">About</a></li>
         </ul>
         <p class="menu-item-descriptor">Topics</p>
-        {# <ul class="list-topics menu-item-regular">
-            {% for tag in collections[ tag ] | sort %}
-            <li>  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-              <a href="{{ tagUrl | url }}" class="tag">{{ tag | title }}</a>
-              </li>
+        <ul class="list-topics menu-item-regular">
+            {% for tag in collections.all | getAllTags | filterTagList %}
+                <li>  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+                    <a href="{{ tagUrl }}" >{{ tag }}</a>
+                </li>
             {% endfor %}
-        </ul> #}
-        {# <ul class="list-topics menu-item-regular">
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog">Blogs</a></li>
-        </ul> #}
+        </ul> 
     </nav>
 </header>

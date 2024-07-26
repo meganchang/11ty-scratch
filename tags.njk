@@ -5,10 +5,9 @@ pagination:
   alias: tag
   filter:
     - all
+    - blog
 permalink: /tags/{{ tag }}/
 layout: home.njk
-eleventyComputed:
-  title: Tagged “{{ tag }}”
 ---
 
 {# <ol>
