@@ -5,9 +5,16 @@
             <li><a href="/blog">Blogs</a></li>
         </ul>
         <p class="menu-item-descriptor">Topics</p>
-        <ul class="list-topics menu-item-regular">
+        {# <ul class="list-topics menu-item-regular">
+            {% for tag in collections[ tag ] | sort %}
+            <li>  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+              <a href="{{ tagUrl | url }}" class="tag">{{ tag | title }}</a>
+              </li>
+            {% endfor %}
+        </ul> #}
+        {# <ul class="list-topics menu-item-regular">
             <li><a href="/">Home</a></li>
             <li><a href="/blog">Blogs</a></li>
-        </ul>
+        </ul> #}
     </nav>
 </header>
