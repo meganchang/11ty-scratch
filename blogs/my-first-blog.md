@@ -2,8 +2,10 @@
 title: My First Blog!
 description: my first description!
 imagepath: "./blogs/blog-with-photo/header.jpg"
+category: music
 tags:
-    - music
+    - opinion
+    - singing
 ---
 
 ## boop boopity

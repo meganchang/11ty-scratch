@@ -6,9 +6,9 @@
         </ul>
         <p class="menu-item-descriptor">Topics</p>
         <ul class="list-topics menu-item-regular">
-            {% for tag in collections.all | getAllTags | filterTagList %}
-                <li>  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-                    <a href="{{ tagUrl }}" >{{ tag }}</a>
+            {% for category in collections.categories %}
+                <li>  {% set categoryUrl %}/categories/{{ category | slugify }}/{% endset %}
+                    <a href="{{ categoryUrl }}" >{{ category }}</a>
                 </li>
             {% endfor %}
         </ul> 

@@ -1,0 +1,14 @@
+---
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+  filter:
+    - all
+    - blog
+permalink: /categories/{{ category }}/
+layout: home.njk
+---
+
+{% set bloglist = collections.blog | categoryFilter(category) %}
+{% include "blog-list.njk" %}
