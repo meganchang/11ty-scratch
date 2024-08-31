@@ -1,6 +1,18 @@
 {% extends 'base.njk' %}
+{% block pageCss %}
+    <link rel="stylesheet" href="/assets/scss/pages/home.css">
+{% endblock %}
 
 {% block main %}
 {# <h1>{{ title }}</h1> #}
-{{ content }}
+<div class="content-wrapper">
+    <ul class="subnav-list">
+        {% for category in collections.categories %}
+            <li class="subnav-item">  {% set categoryUrl %}/categories/{{ category | slugify }}/{% endset %}
+                <a href="{{ categoryUrl }}" >{{ category }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {{ content }}
+</div>
 {% endblock %}
