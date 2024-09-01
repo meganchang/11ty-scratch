@@ -10,8 +10,7 @@
         <div class="blog-meta">
           {% set blogDate %}{{ blog.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
           <p class="blog-date">{{ blogDate }}</p>
-          {% set categoryUrl %}/categories/{{ blog.data.category | slugify }}/{% endset %}
-          <p class="blog-category" href="{{ categoryUrl }}">{{ blog.data.category }}</p>
+          <p class="blog-category">{{ blog.data.category }}</p>
         </div>
       </div>
     </a>

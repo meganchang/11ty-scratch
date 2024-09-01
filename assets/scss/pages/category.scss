@@ -1,0 +1,71 @@
+@import '../breakpoints';
+@import '../colors';
+
+.content-wrapper {
+    background: $cloud;
+    padding: 0 16px;
+    @include breakpoint($bp-md) {
+        padding: 0 44px;
+    }
+}
+
+.page-title {
+    color: $ash-700;
+    padding-top: 80px;
+    text-align: center;
+    font-family: 'Figtree';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.category-list {
+    border-top: 3px solid $canary;
+    .category-list-header {
+        display: flex;
+        .category-title {
+            margin-left: auto;
+            font-family: 'Figtree';
+            font-weight: 600;
+            font-size: 96px;
+            letter-spacing: -0.02em;
+            color: $canary;
+            text-transform: capitalize;
+        }
+    }
+
+    .blog-row {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $tan;
+
+        .blog-title {
+            font-family: 'Figtree';
+            font-weight: 600;
+            font-size: 32px;
+            color: $canary-900;
+            margin: 16px 0;
+        }
+
+        .blog-category {
+            margin-left: auto;
+            font-family: 'Figtree';
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: $canary;
+            letter-spacing: 0.1em;
+        }
+
+        .blog-date {
+            font-family: 'Figtree';
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: $ash-900;
+            padding-left: 32px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{% extends 'base.njk' %}
+{% block pageCss %}
+    <link rel="stylesheet" href="/assets/scss/pages/category.css">
+{% endblock %}
+
+{% block main %}
+    <div class="content-wrapper">
+        <h1 class="page-title">All Posts</h1>
+        {% for category in collections.categories %}
+            <div id="{{ category }}" class="category-list">
+                <div class="category-list-header">
+                    <h2 class="category-title">{{ category }}</h2>
+                </div>
+                {% for blog in collections.blog | categoryFilter(category) %}
+                <a href="{{ blog.url }}" class="blog-row">
+                    <h3 class="blog-title">{{ blog.data.title }}</h3>
+                    <p class="blog-category">{{ blog.data.category }}</p>
+                    {% set blogDate %}{{ blog.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
+                    <p class="blog-date">{{ blogDate }}</p>
+                </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
