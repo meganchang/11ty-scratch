@@ -1,11 +1,19 @@
-<div class="blogs">
-    {% for blog in bloglist %}
+<div class="blog-cards">
+  {% for blog in bloglist %}
     <a class="blog" href="{{ blog.url }}">
       <div class="blog-header">
         {% image blog.data.imagepath, "test" %}
       </div>
-      <h2 class="blog-title">{{ blog.data.title }}</h2>
-      <p class="blog-description">{{ blog.data.description }}</p>
+      <div class="blog-info">
+        <h2 class="blog-title">{{ blog.data.title }}</h2>
+        <p class="blog-description">{{ blog.data.description }}</p>
+        <div class="blog-meta">
+          {% set blogDate %}{{ blog.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
+          <p class="blog-date">{{ blogDate }}</p>
+          {% set categoryUrl %}/categories/{{ blog.data.category | slugify }}/{% endset %}
+          <p class="blog-category" href="{{ categoryUrl }}">{{ blog.data.category }}</p>
+        </div>
+      </div>
     </a>
-    {% endfor %}
-  </div>
+  {% endfor %}
+</div>

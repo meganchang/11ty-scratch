@@ -49,33 +49,6 @@ body {
 }
 
 a {
-    color: initial;
+    color: inherit;
     text-decoration-line: none;
 }
-
-// .blogs {
-//     display: flex;
-//     flex-wrap: wrap;
-// }
-
-// .blog {
-//     text-align: center;
-//     width: 100%;
-//     @include breakpoint($bp-md) { 
-//         &:nth-child(n+2),
-//         &:nth-child(n+3) {
-//             width: calc((100% - 16px)/2);
-//         }
-//         &:nth-child(n+3) {
-//             padding-left: 16px;
-//         }
-//     }
-// }
-
-// .blog-header {
-//     img {
-//         width: 100%;
-//         height: auto;
-//     }
-// }
-
