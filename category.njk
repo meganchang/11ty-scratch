@@ -9,6 +9,10 @@
         {% for category in collections.categories %}
             <div id="{{ category }}" class="category-list">
                 <div class="category-list-header">
+                    <div class="category-image">
+                        {% set categoryImagePath %}./assets/img/category/{{ category }}.jpg{% endset %}
+                        {% image categoryImagePath, "test" %}
+                    </div>
                     <h2 class="category-title">{{ category }}</h2>
                 </div>
                 {% for blog in collections.blog | categoryFilter(category) %}

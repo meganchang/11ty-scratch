@@ -7,7 +7,7 @@
 <div class="content-wrapper">
     <ul class="subnav-list">
         {% for category in collections.categories %}
-            <li class="subnav-item">  {% set categoryUrl %}/categories/{{ category | slugify }}/{% endset %}
+            <li class="subnav-item">  {% set categoryUrl %}/category#{{ category | slugify }}{% endset %}
                 <a href="{{ categoryUrl }}" >{{ category }}</a>
             </li>
         {% endfor %}

@@ -23,8 +23,22 @@
 
 .category-list {
     border-top: 3px solid $canary;
+    padding-bottom: 80px;
     .category-list-header {
         display: flex;
+        padding-top: 16px;
+        padding-bottom: 64px;
+        .category-image {
+            aspect-ratio: 1;
+            max-width: 350px;
+            height: auto;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+            }
+        }
         .category-title {
             margin-left: auto;
             font-family: 'Figtree';
