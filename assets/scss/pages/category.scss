@@ -3,6 +3,14 @@
 
 $mobile-bp: $bp-md;
 
+.body-wrapper {
+    background-image: image-url('./assets/img/background/bg-mobile.webp');
+    @include breakpoint($mobile-bp) {
+        background-image: image-url('./assets/img/background/bg-desktop.webp');
+    }
+}   
+
+
 .content-wrapper {
     background: $cloud;
     padding: 0 16px;

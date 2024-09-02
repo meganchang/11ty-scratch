@@ -1,12 +1,12 @@
 @import '../breakpoints';
 @import '../colors';
-// @import 'typography';
-// @import 'nav';
 
 .body-wrapper {
-    background-image: image-url('./assets/img/background/home/bg-desktop.webp');
-}
-
+    background-image: image-url('./assets/img/background/bg-mobile.webp');
+    @include breakpoint($bp-md) {
+        background-image: image-url('./assets/img/background/bg-desktop.webp');
+    }
+}   
 
 .content-wrapper {
     background: $canary-500;
@@ -28,7 +28,6 @@
     font-family: 'Figtree';
     color: $cloud;
     padding-top: calc(40px - 16px);
-    // padding-bottom: 60px;
     text-align: center;
 }
 
@@ -42,48 +41,12 @@
     padding-top: 16px;
 }
 
-
-// .blogs {
-//     display: flex;
-//     flex-wrap: wrap;
-// }
-
-// .blog {
-//     text-align: center;
-//     width: 100%;
-//     @include breakpoint($bp-md) { 
-//         &:nth-child(n+2),
-//         &:nth-child(n+3) {
-//             width: calc((100% - 16px)/2);
-//         }
-//         &:nth-child(n+3) {
-//             padding-left: 16px;
-//         }
-//     }
-// }
-
-// .blog-header {
-//     img {
-//         width: 100%;
-//         height: auto;
-//     }
-// }
-
 .blog-cards {
     display: flex;
     flex-wrap: wrap;
     .blog {
         width: 100%;
-        // width: calc(33.33333% - 4%);
-        // width: 33%;
         padding-top: 24px;
-        
-
-        // padding-right: 2%;
-        // padding-left: 2%;
-        // &:nth-child(3n+3) {
-            //     padding-right: 0;
-            // }
         @include breakpoint($bp-sm) {
             width: calc(50% - 20px);
             padding-right: 10px;
@@ -123,7 +86,6 @@
             font-size: 32px;
             line-height: 32px;
             letter-spacing: -0.02em;
-            // padding-top: 24px;
             padding-bottom: 12px;
         }
         .blog-description {
@@ -139,7 +101,6 @@
             font-family: 'Figtree';
             font-weight: 700;
             font-size: 12px;
-            // line-height: 14px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             bottom: 0;

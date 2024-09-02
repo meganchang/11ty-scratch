@@ -50,7 +50,9 @@ body {
 }
 
 .body-wrapper {
-    background: #72C4E866; // WIP PLACEHOLDER NEEDS ASSET
+    background: #72C4E866;
+    background-attachment: fixed;
+    background-size: cover;
     padding: 0;
     margin: 0;
     @include breakpoint($bp-sm) {
