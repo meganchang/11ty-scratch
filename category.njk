@@ -18,9 +18,11 @@
                 {% for blog in collections.blog | categoryFilter(category) %}
                 <a href="{{ blog.url }}" class="blog-row">
                     <h3 class="blog-title">{{ blog.data.title }}</h3>
-                    <p class="blog-category">{{ blog.data.category }}</p>
-                    {% set blogDate %}{{ blog.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
-                    <p class="blog-date">{{ blogDate }}</p>
+                    <div class="blog-meta">
+                        <p class="blog-category">{{ blog.data.category }}</p>
+                        {% set blogDate %}{{ blog.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
+                        <p class="blog-date">{{ blogDate }}</p>
+                    </div>
                 </a>
                 {% endfor %}
             </div>

@@ -1,6 +1,8 @@
 @import '../breakpoints';
 @import '../colors';
 
+$mobile-bp: $bp-md;
+
 .content-wrapper {
     background: $cloud;
     padding: 0 16px;
@@ -11,14 +13,21 @@
 
 .page-title {
     color: $ash-700;
-    padding-top: 80px;
+    margin: 0;
+    padding-top: 32px;
+    padding-bottom: 40px;
     text-align: center;
     font-family: 'Figtree';
     font-weight: 700;
-    font-size: 40px;
+    font-size: 24px;
     line-height: 48px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    @include breakpoint($mobile-bp) {
+        padding-top: 80px;
+        padding-bottom: 64px;
+        font-size: 40px;
+    }
 }
 
 .category-list {
@@ -27,11 +36,19 @@
     .category-list-header {
         display: flex;
         padding-top: 16px;
-        padding-bottom: 64px;
+        padding-bottom: 32px;
+        flex-direction: column;
+        @include breakpoint($mobile-bp) {
+            flex-direction: row;
+            align-items: center;
+            padding-bottom: 64px;
+        }
         .category-image {
             aspect-ratio: 1;
-            max-width: 350px;
             height: auto;
+            @include breakpoint($mobile-bp) {
+                max-width: 350px;
+            }
             img {
                 display: block;
                 width: 100%;
@@ -40,20 +57,30 @@
             }
         }
         .category-title {
-            margin-left: auto;
+            margin: 0;
+            margin-top: 24px;
             font-family: 'Figtree';
             font-weight: 600;
-            font-size: 96px;
+            font-size: 40px;
             letter-spacing: -0.02em;
             color: $canary;
             text-transform: capitalize;
+            @include breakpoint($mobile-bp) {
+                margin: 0;
+                margin-left: auto;
+                font-size: 96px;
+            }
         }
     }
 
     .blog-row {
         display: flex;
-        align-items: center;
         border-bottom: 1px solid $tan;
+        flex-direction: column;
+        @include breakpoint($mobile-bp) {
+            flex-direction: row;
+            align-items: center;
+        }
 
         .blog-title {
             font-family: 'Figtree';
@@ -62,9 +89,13 @@
             color: $canary-900;
             margin: 16px 0;
         }
-
+        .blog-meta {
+            display: flex;
+            @include breakpoint($mobile-bp) {
+                margin-left: auto;
+            }
+        }
         .blog-category {
-            margin-left: auto;
             font-family: 'Figtree';
             font-weight: 700;
             font-size: 12px;
