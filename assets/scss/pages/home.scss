@@ -3,6 +3,11 @@
 // @import 'typography';
 // @import 'nav';
 
+.body-wrapper {
+    background-image: image-url('./assets/img/background/home/bg-desktop.webp');
+}
+
+
 .content-wrapper {
     background: $canary-500;
     padding: 0 16px;

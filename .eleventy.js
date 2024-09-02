@@ -1,13 +1,15 @@
 const pluginRev = require("eleventy-plugin-rev");
 const eleventySass = require("eleventy-sass");
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
 const pluginImages = require("./.eleventy.images.js");
+const pluginBackgroundImages = require("./postcssImagePlugin.js");
 
 module.exports = function (eleventyConfig) {
   // App plugins
 	eleventyConfig.addPlugin(pluginImages);
-  // eleventyConfig.addPlugin(pluginRev);
   eleventyConfig.addPlugin(eleventySass, {
-    // rev: true
+    postcss: postcss([pluginBackgroundImages, autoprefixer])
   });
 
 	// Return all the tags used in a collection
@@ -68,7 +70,6 @@ module.exports = function (eleventyConfig) {
 	// });
 
   eleventyConfig.setNunjucksEnvironmentOptions({
-    throwOnUndefined: true,
     autoescape: false, // warning: don’t do this!
   });
 };

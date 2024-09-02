@@ -6,6 +6,11 @@
 $background-color: #FFFFFF;
 $nav-desktop-width: 120px;
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 // .body-wrapper {
 //     display: flex;
 //     padding: 60px;
@@ -44,7 +49,7 @@ $nav-desktop-width: 120px;
     }
 }
 
-body {
+.body-wrapper {
     background: #72C4E866; // WIP PLACEHOLDER NEEDS ASSET
     padding: 0;
     margin: 0;
