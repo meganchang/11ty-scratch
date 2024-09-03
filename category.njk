@@ -11,7 +11,7 @@
                 <div class="category-list-header">
                     <div class="category-image">
                         {% set categoryImagePath %}./assets/img/category/category-{{ category }}.webp{% endset %}
-                        {% image categoryImagePath, "test" %}
+                        {% image categoryImagePath, '{{ category }}' %}
                     </div>
                     <h2 class="category-title">{{ category }}</h2>
                 </div>

@@ -2,6 +2,9 @@
 title: Blog with photo!
 description: my blog description!
 imagepath: "./blogs/blog-with-photo/header.jpg"
+headerImagePath: "./header.jpg"
+backgroundImagePath: "./background.webp"
+mobileBackgroundImagePath: "./mobile-background.webp"
 category: entertainment
 tags:
     - celebrity

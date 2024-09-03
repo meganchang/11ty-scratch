@@ -1,5 +1,39 @@
 {% extends 'base.njk' %}
+{% block pageCss %}
+    <link rel="stylesheet" href="/assets/scss/pages/blog.css">
+{% endblock %}
+
 {% block main %}
-<h1>{{ title }}</h1>
-{{ content }}
+    <style>
+        .body-wrapper {
+            --bg-image: url("{% imageUrl backgroundImagePath %}");
+            --bg-image-mobile: url("{% imageUrl mobileBackgroundImagePath %}");
+        }
+    </style>
+
+    <div class="content-wrapper">
+        <div class="blog-header">
+            <div class="blog-image">
+                {% image headerImagePath, 'alt text' %}
+            </div>
+            <h1 class="blog-title">{{ title }}</h1>
+        </div>
+        <div class="blog-body-wrapper">
+            <div class="blog-body">
+                {{ content }}
+            </div>
+            <div class="blog-meta">
+                <div class="blog-meta-wrapper">
+                    <p class="blog-meta-label">Published</p>
+                    {% set blogDate %}{{ page.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
+                    <p class="blog-date">{{ blogDate }}</p>
+                </div>
+                <div class="blog-meta-wrapper">
+                    <p class="blog-meta-label">Category</p>
+                    {% set categoryUrl %}/category#{{ category | slugify }}{% endset %}
+                    <a class="blog-category" href="{{ categoryUrl }}">{{ category }}</p>
+                </div>
+              </div>
+        </div>
+    </div>
 {% endblock %}

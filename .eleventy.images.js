@@ -48,4 +48,39 @@ module.exports = function(eleventyConfig) {
 
 		return eleventyImage.generateHTML(metadata, imageAttributes);
 	});
+
+	eleventyConfig.addAsyncShortcode("imageUrl", async function imageUrlShortcode(src) {
+		let formats = ["webp", "auto"];
+		let input;
+		if (!src) {
+			return null;
+		}
+		if(isFullUrl(src)) {
+			input = src;
+		} else {
+			input = relativeToInputPath(this.page.inputPath, src);
+			console.log(this.page.inputPath);
+			console.log(input);
+		}
+
+		let originalFormat;
+		for (let format of formats) {
+			if (src.includes(format)) {
+				originalFormat = format;
+			}
+		}
+
+		let metadata = await eleventyImage(input, {
+			widths: ["auto"],
+			formats,
+			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
+		});
+
+		console.log("!!!!!!!!!!!!!!!!")
+		console.log(src);
+		console.log(metadata);
+		console.log(metadata[originalFormat][0].url);
+		console.log("!!!!!!!!!!!!!!!!")
+		return metadata[originalFormat][0].url;
+	})
 };
