@@ -21,8 +21,13 @@ $mobile-bp: $bp-md;
             padding: 80px;
         }
         .blog-image {
-            aspect-ratio: 1;
+            // aspect-ratio: 1;
             height: auto;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
             @include breakpoint($mobile-bp) {
                 max-width: 500px;
                 padding-right: 40px;
@@ -33,8 +38,15 @@ $mobile-bp: $bp-md;
             color: $ash-800;
             font-family: 'Figtree';
             font-weight: 700;
-            font-size: 96px;
+            font-size: 40px;
             letter-spacing: -0.02em;
+            padding: 56px 24px;
+            text-align: center;
+            @include breakpoint($mobile-bp) {
+                padding: initial;
+                text-align: left;
+                font-size: 96px;
+            }
         }
     }
 
@@ -100,11 +112,12 @@ $mobile-bp: $bp-md;
     .blog-related {
         padding-left: 16px;
         padding-right: 16px;
+        padding-bottom: 80px;
         @include breakpoint($mobile-bp) {
             padding-top: 80px;
             padding-left: 54px;
             padding-right: 54px;
-            padding-bottom: 70px;
+            
         }
 
         h3 {
