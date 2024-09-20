@@ -59,8 +59,6 @@ module.exports = function(eleventyConfig) {
 			input = src;
 		} else {
 			input = relativeToInputPath(this.page.inputPath, src);
-			console.log(this.page.inputPath);
-			console.log(input);
 		}
 
 		let originalFormat;
@@ -76,11 +74,6 @@ module.exports = function(eleventyConfig) {
 			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
 		});
 
-		console.log("!!!!!!!!!!!!!!!!")
-		console.log(src);
-		console.log(metadata);
-		console.log(metadata[originalFormat][0].url);
-		console.log("!!!!!!!!!!!!!!!!")
 		return metadata[originalFormat][0].url;
 	})
 };

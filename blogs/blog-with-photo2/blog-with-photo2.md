@@ -1,10 +1,11 @@
 ---
 title: January-Approved Eco Friendly Brands
 description: Short description about the title and possibly what’s hiding behind the title were you to click it and learn more, as one does.
-imagepath: "./blogs/blog-with-photo2/header.jpg"
+imagepath: "blogs/blog-with-photo2/header.jpg"
 headerImagePath: "./header.jpg"
 backgroundImagePath: "./background.webp"
 mobileBackgroundImagePath: "./mobile-background.webp"
+relatedBlogsImagePath: "blogs/my-first-blog/header.jpg"
 category: sustainability
 tags:
     - celebrity

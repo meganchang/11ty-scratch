@@ -31,31 +31,16 @@ module.exports = function (eleventyConfig) {
       return filtered;
   });
 
-  // Return all the categories
-	// eleventyConfig.addFilter("getAllCategories", collection => {
-	// 	let categorySet = new Set();
-  //   console.log(collection.length);
-	// 	for(let item of collection) {
-  //     if (item.data.category) {
-  //       console.log(`${item.data.title} ${item.data.category}`);
-  //       categorySet.add(item.data.category);
-  //     }
-	// 	}
-  //   console.log(categorySet);
-	// 	return Array.from(categorySet);
-	// });
-
     // Return all the categories
 	eleventyConfig.addCollection("categories", collection => {
 		let categorySet = new Set();
-    console.log("-----------------------------")
 		for(let item of collection.items) {
       if (item.data.category) {
-        console.log(`${item.data.title} ${item.data.category}`);
+        // console.log(`${item.data.title} ${item.data.category}`);
         categorySet.add(item.data.category);
       }
 		}
-    console.log(categorySet);
+    // console.log(categorySet);
 		return Array.from(categorySet);
 	});
 
@@ -65,9 +50,26 @@ module.exports = function (eleventyConfig) {
       return filtered;
   });
 
-	// eleventyConfig.addFilter("filterCategoryList", function filterCategoriesList(categories) {
-	// 	return (categories || []).filter(category => ["all", "blog"].indexOf(category) === -1);
-	// });
+  eleventyConfig.addFilter('blogFilterOut', function(collection, blogTitle) {
+    if (!blogTitle) return collection;
+    // let filtered = collection.filter(item => item.data.category == category)
+    filtered = collection.filter(item => item.data.title !== blogTitle)
+    return filtered;
+  })
+
+  eleventyConfig.addGlobalData("root", () => ".");
+
+  // eleventyConfig.addCollection("relatedBlogs", function(collection, currentBlogTitle, currentBlogCategory) {
+  //   let relatedBlogs = new Set();
+  //   for (let item of collection.items) {
+  //     console.log(item);
+  //     if (item.data.category === currentBlogCategory && item.data.title !== currentBlogTitle) {
+  //       console.log(item.data.title);
+  //       relatedBlogs.add(item);
+  //     }
+  //   }
+  //   return Array.from(relatedBlogs);
+  // })
 
   eleventyConfig.setNunjucksEnvironmentOptions({
     autoescape: false, // warning: don’t do this!

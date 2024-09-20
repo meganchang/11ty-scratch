@@ -1,10 +1,11 @@
 ---
 title: Blog with photo!
 description: my blog description!
-imagepath: "./blogs/blog-with-photo/header.jpg"
+imagepath: "blogs/blog-with-photo/header.jpg"
 headerImagePath: "./header.jpg"
 backgroundImagePath: "./background.webp"
 mobileBackgroundImagePath: "./mobile-background.webp"
+relatedBlogsImagePath: "blogs/blog-with-photo/header.jpg"
 category: entertainment
 tags:
     - celebrity

@@ -12,7 +12,7 @@ $mobile-bp: $bp-md;
 
 .content-wrapper {
     background-color: $cloud;
-    .blog-header {
+    .blog-header-section {
         display: flex;
         flex-direction: column;
         @include breakpoint($mobile-bp) {
@@ -49,13 +49,22 @@ $mobile-bp: $bp-md;
 
     .blog-body {
         max-width: 660px;
-        padding-bottom: 64px;
+        padding-bottom: 40px;
+        padding-right: 16px;
+        padding-left: 16px;
+        @include breakpoint($mobile-bp) {
+            padding-bottom: 64px;
+        }
     }
 
     .blog-meta {
         display: flex;
-        width: 100%;
+        flex-direction: column;
         max-width: 660px;
+        @include breakpoint($mobile-bp) {
+            flex-direction: row;
+            width: 100%;
+        }
     }
 
     .blog-meta-wrapper {
@@ -86,6 +95,42 @@ $mobile-bp: $bp-md;
         font-size: 16px;
         text-transform: capitalize;;
 
+    }
+
+    .blog-related {
+        padding-left: 16px;
+        padding-right: 16px;
+        @include breakpoint($mobile-bp) {
+            padding-top: 80px;
+            padding-left: 54px;
+            padding-right: 54px;
+            padding-bottom: 70px;
+        }
+
+        h3 {
+            margin: 0;
+            @include breakpoint($bp-sm) {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+            @include breakpoint($bp-lg) {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+        }
+        .blog-related-heading {
+            color: $ash-900;
+            font-family: 'Figtree';
+            font-weight: 500;
+            font-size: 32px;
+            text-transform: capitalize;;
+            letter-spacing: -0.03em;
+        }
+        .blog-cards {
+            .blog {
+                padding-top: 24px;
+            }
+        }
     }
     
 }

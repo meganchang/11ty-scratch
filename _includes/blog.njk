@@ -12,7 +12,7 @@
     </style>
 
     <div class="content-wrapper">
-        <div class="blog-header">
+        <div class="blog-header-section">
             <div class="blog-image">
                 {% image headerImagePath, 'alt text' %}
             </div>
@@ -21,19 +21,43 @@
         <div class="blog-body-wrapper">
             <div class="blog-body">
                 {{ content }}
+                <div class="blog-meta">
+                    <div class="blog-meta-wrapper">
+                        <p class="blog-meta-label">Published</p>
+                        {% set blogDate %}{{ page.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
+                        <p class="blog-date">{{ blogDate }}</p>
+                    </div>
+                    <div class="blog-meta-wrapper">
+                        <p class="blog-meta-label">Category</p>
+                        {% set categoryUrl %}/category#{{ category | slugify }}{% endset %}
+                        <a class="blog-category" href="{{ categoryUrl }}">{{ category }}</a>
+                    </div>
             </div>
-            <div class="blog-meta">
-                <div class="blog-meta-wrapper">
-                    <p class="blog-meta-label">Published</p>
-                    {% set blogDate %}{{ page.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
-                    <p class="blog-date">{{ blogDate }}</p>
+            </div>
+            <div class="blog-related">
+                <h3 class="blog-related-heading">Read More</h3>
+                {% set bloglist = collections.blog | categoryFilter(category) %}
+                {# {% include "blog-list.njk" %} #} 
+                {# can't use blog-list because of header image path #}
+                <div class="blog-cards">
+                    {% for blog in bloglist %}
+                      <a class="blog" href="{{ blog.url }}">
+                        <div class="blog-header">
+                          {% image blog.data.headerImagePath, "test" %}
+                        </div>
+                        <div class="blog-info">
+                          <h2 class="blog-title">{{ blog.data.title }}</h2>
+                          <p class="blog-description">{{ blog.data.description }}</p>
+                          <div class="blog-meta">
+                            {% set blogDate %}{{ blog.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}{% endset %}
+                            <p class="blog-date">{{ blogDate }}</p>
+                            <p class="blog-category">{{ blog.data.category }}</p>
+                          </div>
+                        </div>
+                      </a>
+                    {% endfor %}
                 </div>
-                <div class="blog-meta-wrapper">
-                    <p class="blog-meta-label">Category</p>
-                    {% set categoryUrl %}/category#{{ category | slugify }}{% endset %}
-                    <a class="blog-category" href="{{ categoryUrl }}">{{ category }}</p>
-                </div>
-              </div>
+            </div>
         </div>
     </div>
 {% endblock %}
