@@ -1,0 +1,19 @@
+{% extends 'base.njk' %}
+{% block pageCss %}
+    <link rel="stylesheet" href="/assets/scss/pages/about.css">
+{% endblock %}
+
+{% block main %}
+<div class="content-wrapper">
+    <h1 class="page-title">About</h1>
+    <div id="january-studios-logo">
+        {% image './assets/img/about-pg-graphic.png', "January Studios" %}
+    </div>
+    <div class="about-body">
+        <h2 class="about-heading">January Studio</h2>
+        <p>January Studio is a collection of thoughts and work by Rachael Callahan: designer, singer, traveler, photo taker, entertainment enjoyer. This site is her creative blog, covering topics like entertainment, travel, music, and anime, among other miscellaneous interests that may arise.</p>
+        <h2 class="about-heading">Rachael</h2>
+        <p>Born and raised in Jacksonville, Florida. As long as I can remember, I’ve always loved singing. My mom loves telling people that I recognized Twinkle Twinkle Little Star and the ABC song shared the same melody at the age of 2, and switched between them when I ran out of lyrics or letters. I loved writing songs on the keyboard starting in elementary school through to high school, but not many songs survived. Now I like learning songs and recording covers, and going karaoke naturally. At the dawn of the personal home computer age, my young self began digitally designing when my mom bought a computer around 1995-ish. My first foray was a Sailor Moon fansite made with AOL Page Maker. Graduating to building sites with Dreamweaver, I eventually launched my first domain at 13 (with my mom’s credit card). Sadly I couldn’t figure out how to be a pop star, so I went to college for graphic design and followed that up with a career as a web designer. Recently I felt like that wasn’t enough and I needed another creative outlet so I created this space.</p>
+    </div>
+</div>
+{% endblock %}

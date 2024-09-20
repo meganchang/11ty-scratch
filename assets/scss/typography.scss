@@ -1,6 +1,14 @@
 @import 'colors';
 @import 'breakpoints';
 
+
+p {
+    font-family: 'Figtree';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: $ash-900;
+}
 // .blog-title {
 //     font-family: Fraunces;
 //     color: $primary-text;
@@ -33,36 +41,12 @@
 //     line-height: 60px;
 // }
 
-.blog-body {
-    font-family: Inter;
-    color: $primary-text;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 28px;
-}
+// .blog-body {
+//     font-family: Inter;
+//     color: $primary-text;
+//     font-weight: 400;
+//     font-size: 18px;
+//     line-height: 28px;
+// }
 
-.menu-item-bold {
-    font-family: Figtree;
-    font-weight: 700;
-    color: $primary-text;
-    font-size: 20px;
-    line-height: 26px;
-}
-
-.menu-item-regular {
-    font-family: Figtree;
-    font-weight: 400;
-    color: $primary-text;
-    font-size: 20px;
-    line-height: 26px;
-}
-
-.menu-item-descriptor {
-    font-family: Figtree;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: $brand-dark-tan;
-    font-size: 14px;
-    line-height: 16px;
-}
 

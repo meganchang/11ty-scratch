@@ -1,0 +1,69 @@
+@import '../breakpoints';
+@import '../colors';
+
+$mobile-bp: $bp-md;
+
+.body-wrapper {
+    background-image: image-url('./assets/img/background/bg-mobile.webp');
+    @include breakpoint($mobile-bp) {
+        background-image: image-url('./assets/img/background/bg-desktop.webp');
+    }
+}   
+
+.content-wrapper {
+    background: $cloud;
+    padding: 0 16px;
+    @include breakpoint($bp-md) {
+        padding: 0 44px;
+    }
+}
+
+.page-title {
+    color: $wave-900;
+    margin: 0;
+    padding-top: 32px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-family: 'Figtree';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 48px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    @include breakpoint($mobile-bp) {
+        padding-top: 80px;
+        padding-bottom: 64px;
+        font-size: 40px;
+    }
+}
+
+#january-studios-logo {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 650px;
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.about-body {
+    max-width: 660px;
+    padding-bottom: 40px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 80px;
+    margin: 0 auto;
+    @include breakpoint($mobile-bp) {
+        padding-bottom: 64px;
+    }
+
+    h2 {
+        font-family: 'Figtree';
+        color: $wave-900;
+        font-weight: 700;
+        font-size: 32px;
+        letter-spacing: -0.02em;
+    }
+}
