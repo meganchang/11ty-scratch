@@ -2,6 +2,7 @@
 @import '../colors';
 
 $mobile-bp: $bp-md;
+$tablet-bp: $bp-lg;
 
 .body-wrapper {
     background-image: image-url('./assets/img/background/bg-mobile.webp');
@@ -47,15 +48,21 @@ $mobile-bp: $bp-md;
         padding-bottom: 32px;
         flex-direction: column;
         @include breakpoint($mobile-bp) {
-            flex-direction: row;
-            align-items: center;
             padding-bottom: 64px;
         }
+        @include breakpoint($tablet-bp) {
+            flex-direction: row;
+            align-items: center;
+        }
+
         .category-image {
             aspect-ratio: 1;
             height: auto;
-            @include breakpoint($mobile-bp) {
-                max-width: 350px;
+            max-width: 350px;
+            max-height: 350px;
+            @include breakpoint($tablet-bp) {
+                max-width: 100%;
+                max-height: 100%;
             }
             img {
                 display: block;
@@ -75,8 +82,13 @@ $mobile-bp: $bp-md;
             text-transform: capitalize;
             @include breakpoint($mobile-bp) {
                 margin: 0;
-                margin-left: auto;
                 font-size: 96px;
+                padding-top: 24px;
+            }
+            @include breakpoint($tablet-bp) {
+                margin-left: auto;
+                padding-top: 0;
+
             }
         }
     }
@@ -93,7 +105,7 @@ $mobile-bp: $bp-md;
         .blog-title {
             font-family: 'Figtree';
             font-weight: 600;
-            font-size: 32px;
+            font-size: 28px;
             color: $canary-900;
             margin: 16px 0;
         }
