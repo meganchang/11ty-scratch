@@ -1,7 +1,7 @@
 $bp-xm: 320px;
 $bp-sm: 640px;
 $bp-md: 960px;
-$bp-lg: 1200px;
+$bp-lg: 1100px;
 $bp-xl: 1600px;
 
 @mixin breakpoint($bp) {
@@ -15,7 +15,7 @@ $bp-xl: 1600px;
         @media (min-width: 960px) { @content; } 
     }
     @else if $bp == $bp-lg { //screen is at least 1200
-        @media (min-width: 1200px) { @content; } 
+        @media (min-width: 1100px) { @content; } 
     }
     @else if $bp == $bp-xl { //screen is at least 1600
         @media (min-width: 1600px) { @content; } 
