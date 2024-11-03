@@ -1,0 +1,21 @@
+<footer>
+    <div id="january-studios-logo--footer">
+        {# {% image './assets/img/footer-logo.png', "January Studios" %} #}
+    </div>
+    <div class="footer-section">
+        <p class="footer-label">Read More</p>
+        <ul class="footer-list">
+            {% for category in collections.categories %}
+                <li class="footer-item">  {% set categoryUrl %}/category#{{ category | slugify }}{% endset %}
+                    <a href="{{ categoryUrl }}" >{{ category }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <p class="footer-label">Navigate</p>
+        <ul class="footer-list">
+            <li class="footer-item">Home</li>
+            <li class="footer-item">About</li>
+        </ul>
+    </div>
+</footer>
